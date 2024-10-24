@@ -1,0 +1,35 @@
+discord:
+  token: "YOUR_BOT_TOKEN_HERE"
+commandPrefix: "!"
+
+roleGroups:
+  admins:
+    - "123456789012345678"
+    - "876543210987654321"
+  moderators:
+    - "234567890123456789"
+    - "987654321098765432"
+
+commands:
+  sudo:
+    description: "Execute a command with elevated privileges"
+    format: "sudo %s %s"
+    roles: ["admins", "234567890123", "moderators"]
+    pingroleonexecute: "234567890123"
+    fields:
+      - name: "username"
+        type: "STRING"
+        description: "The username to execute the command as"
+      - name: "command"
+        type: "STRING"
+        description: "The command to execute"
+
+  othercommand:
+    description: "Perform another action"
+    format: "otherCommand %s"
+    roles: ["moderators"]
+    pingroleonexecute: "987654321098"
+    fields:
+      - name: "target"
+        type: "STRING"
+        description: "The target of the command"
